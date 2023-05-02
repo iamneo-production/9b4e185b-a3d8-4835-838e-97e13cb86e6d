@@ -1,0 +1,115 @@
+li{
+    border-right: 1px solid black;
+    display:inline;
+    float: left;
+    padding-right: 80px;
+}
+ul{
+    background-color: blue;
+    list-style-type: none;
+    margin: 0%;
+    padding: 0%;
+    overflow: hidden;
+    background-color: black;
+}
+li a{
+    display:block;
+    color: azure;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover{
+ background-color: rgb(170, 57, 226);
+}
+.active{
+    background-color: rgb(176, 60, 219);
+}
+.img{
+    text-align:right;
+    display:inline-block;
+    margin-right: 10px;
+    height: 200px;
+    width: 200px;
+}
+ .addTeam{
+    margin-top: 70px;
+    padding: left 20px;
+    padding-right: 50px;
+    border: 2px grey;
+    width: 250px;
+    height:400px;
+    text-align: center;
+    background-color: rgb(213, 213, 31);
+ }
+
+ .form{
+    margin-top: 10px;
+    padding-left: 100px;
+    border: .2px rgb(128, 128, 128);
+    float: center;
+    padding: 20px;
+ } 
+/* .display{
+    display: inline-flex;
+}
+
+.tab{
+    position: absolute;
+    top: 10px; 
+    padding-top: 90px;
+    padding-left: 400px;
+} */
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+
+    }
+          th, td {
+          padding: 8px;
+          text-align: left;
+          border: 5px solid #c8c6c6;
+
+          }
+
+          th{
+             background-color: rgb(252, 252, 252);
+
+          }
+          tr:nth-child(even) {
+             background-color: rgb(150, 142, 23);
+             }
+             tr:nth-child(odd){
+
+                background-color: rgb(249, 252, 55);
+
+             }
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    border-top: 1px solid #ddd;
+    color: #ddd;
+  
+  }
+  
+  
+  footer p {
+  
+    margin: 0;
+  
+  }
+  .body{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNQVuyYkkLOCXAbW3OEwKj3AD_Xv4S7oPNmHeilu-wlQ&s") ;
+    background-size: cover;
+  }

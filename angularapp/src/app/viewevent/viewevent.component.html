@@ -1,0 +1,51 @@
+<div class="body">
+    <div body>
+    <div >
+            <ul>
+           <li> <a routerLink="/userhome">Cricket event</a></li>
+           <li> <a routerLink="/bookevent">BookEvent</a></li>
+           <li> <a routerLink="/viewbookedevent">ViewBookedEvent</a></li>
+           <li style="float: right;"> <a routerLink="/login" class="logout">Logout</a></li>
+        </ul>
+        </div>
+    
+    <div class="display">
+        <div class="tab">
+            <h2>Event Details</h2>
+            <table border="2" class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">EventId</th>
+                        <th scope="col">EventName</th>
+                        <th scope="col">ApplicantName</th>
+                        <th scope="col">ApplicantAddress</th>
+                        <th scope="col">RefreeName</th>
+                        <th scope="col">VenueName</th>
+                        <th scope="col">EventFromDate</th>
+                        <th scope="col">EventToDate</th>
+    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let e of Event">
+                        <td>{{e.eventId}}</td>
+                        <td>{{e.eventName}}</td>
+                        <td>{{e.applicantName}}</td>
+                        <td>{{e.applicantAddress}}</td>
+                        <td>{{e.refereeName}}</td>
+                        <td>{{e.venueName}}</td>
+                        <td>{{e.eventFromDate}}</td>
+                        <td>{{e.eventToDate}}</td>
+    
+    
+                    </tr>
+                    <router-outlet></router-outlet>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer><h4>Cricket Management System</h4><p>A Team Dark Matrix Solutions</p></footer>
+    </div>
+    <router-outlet></router-outlet>
+    </div>
+    

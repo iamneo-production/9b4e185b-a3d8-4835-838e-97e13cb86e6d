@@ -1,0 +1,159 @@
+<!-- <div fxLayoutAlign="center center" fxFlexFill class="component">
+    <mat-card fxFlex="25">
+        <mat-toolbar color="primary">Login Page</mat-toolbar>
+    <form fxLayoutAlign="stretch" fxLayout="column" class="Registration-form" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+            <div class="form-group">
+            <mat-label for="userRole">userRole</mat-label>
+            <mat-select [(ngModel)]="userRole">
+              <mat-option *ngFor="let option of options" [value]="option.value">{{option.label}}</mat-option>
+            </mat-select>
+            </div>
+          </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <div class="form-group">
+            <mat-label for="email">Email address</mat-label>
+            <input matInput type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
+            </div>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <div class="form-group">
+            <mat-label for="username">User Name</mat-label>
+            <input matInput type="text" class="form-control" id="username" [(ngModel)]="username" name="username" required>
+            </div>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <div class="form-group">
+            <mat-label for="mobileNumber">Mobile Number</mat-label>
+            <input matInput type="text" class="form-control" id="mobileNumber" [(ngModel)]="mobileNumber" name="mobileNumber" required>
+            </div>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <div class="form-group">
+            <mat-label for="password">Password</mat-label>
+            <input matInput type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required>
+            </div>
+          </mat-form-field> -->
+
+          <!-- <mat-form-field appearance="fill">
+            <div class="form-group">
+            <mat-label for="confirmPassword">Confirm Password</mat-label>
+            <input matInput type="password" class="form-control" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+            </div>
+          </mat-form-field> -->
+          
+          <!-- <button mat-raised-button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+    </form>
+    </mat-card>
+    </div> -->
+
+
+    <!-- <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="registrationForm.controls['email'].invalid && (registrationForm.controls['email'].dirty || registrationForm.controls['email'].touched)">
+          <span *ngIf="registrationForm.controls['email'].errors.required">Email is required</span>
+          <span *ngIf="registrationForm.controls['email'].errors.email">Please enter a valid email</span>
+  </mat-error>
+  </mat-form-field>
+
+<mat-form-field>
+<input matInput type="password" placeholder="Password" formControlName="password">
+<mat-error *ngIf="registrationForm.controls['password'].invalid && (registrationForm.controls['password'].dirty || registrationForm.controls['password'].touched)">
+<span *ngIf="registrationForm.controls['password'].errors.required">Password is required</span>
+</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+<input matInput placeholder="Username" formControlName="userName">
+<mat-error *ngIf="registrationForm.controls['userName'].invalid && (registrationForm.controls['userName'].dirty || registrationForm.controls['userName'].touched)">
+<span *ngIf="registrationForm.controls['userName'].errors.required">Username is required</span>
+</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+<input matInput placeholder="Mobile Number" formControlName="userMobile">
+<mat-error *ngIf="registrationForm.controls['userMobile'].invalid && (registrationForm.controls['userMobile'].dirty || registrationForm.controls['userMobile'].touched)">
+<span *ngIf="registrationForm.controls['userMobile'].errors.required">Mobile number is required</span>
+<span *ngIf="registrationForm.controls['userMobile'].errors.pattern">Please enter a valid mobile number</span>
+</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+<mat-select placeholder="User Role" formControlName="userRole">
+<mat-option value="Organizer">Organizer</mat-option>
+<mat-option value="Admin">Admin</mat-option>
+</mat-select>
+<mat-error *ngIf="registrationForm.controls['userRole'].invalid && (registrationForm.controls['userRole'].dirty || registrationForm.controls['userRole'].touched)">
+<span *ngIf="registrationForm.controls['userRole'].errors.required">User role is required</span>
+</mat-error>
+</mat-form-field>
+
+<button mat-raised-button color="primary" type="submit" [disabled]="registrationForm.invalid">Register</button>
+</form> -->
+
+<div fxLayoutAlign="center center" fxFlexFill class="component">
+    <mat-card fxFlex="35">
+        <mat-toolbar color="primary">Registration Page</mat-toolbar>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    
+    <mat-form-field>
+    
+    <input matInput placeholder="Email" formControlName="email" required>
+    <mat-error *ngIf="registrationForm.get('email')?.hasError('required')">
+    Email is required
+    </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+    <input matInput type="password" placeholder="Password" formControlName="password" required>
+    <mat-error *ngIf="registrationForm.get('password')?.hasError('required')">
+    Password is required
+    </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+    <input matInput placeholder="User Name" formControlName="username" required>
+    <mat-error *ngIf="registrationForm.get('username')?.hasError('required')">
+    User Name is required
+    </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+    <input matInput placeholder="Mobile Number" formControlName="mobileNumber" required>
+    <mat-error *ngIf="registrationForm.get('mobileNumber')?.hasError('required')">
+    Mobile Number is required
+    </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+    <mat-label>User Role</mat-label>
+    <mat-select formControlName="userRole" required>
+    <mat-option value="Organizer">Organizer</mat-option>
+    <mat-option value="Admin">Admin</mat-option>
+    </mat-select>
+    <mat-error *ngIf="registrationForm.get('userRole')?.hasError('required')">
+    User Role is required
+    </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword" required>
+      <mat-error *ngIf="registrationForm.get('confirmPassword')?.hasError('required')">
+      Confirm Password is required
+      </mat-error>
+      </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" type="submit" [disabled]="registrationForm.invalid">Register</button><br>
+    <p id="error">{{errormessage}}</p>
+    <br>
+    <br>
+    <p>Already a user? <a routerLink="/login">Login</a></p>
+    
+    </form>
+  </mat-card>
+  </div>

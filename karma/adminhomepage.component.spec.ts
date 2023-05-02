@@ -2,16 +2,16 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 // import { RouterTestingModule } from '@angular/router/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { AdminHomePageComponent } from './adminhomepage.component';
+import { AdminhomepageComponent } from './adminhomepage.component';
 
-describe('AdminHomePageComponent', () => {
-  let component: AdminHomePageComponent;
+describe('AdminhomepageComponent', () => {
+  let component: AdminhomepageComponent;
   beforeEach(() => TestBed.configureTestingModule({
     imports: [HttpClientTestingModule], 
-    providers: [AdminHomePageComponent]
+    providers: [AdminhomepageComponent]
   }));
   beforeEach(() => {
-    const fixture = TestBed.createComponent(AdminHomePageComponent);
+    const fixture = TestBed.createComponent(AdminhomepageComponent);
     component = fixture.componentInstance;
   });
   it('FE_adminHomePageTest', () => {

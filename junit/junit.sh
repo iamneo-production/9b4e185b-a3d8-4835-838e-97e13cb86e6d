@@ -9,18 +9,22 @@ then
 		cd /home/coder/project/workspace/springapp/;
 		mvn clean test;
     else
-        echo "BE_Add_User FAILED";
-        echo "BE_Add_Theme FAILED";
-        echo "BE_Get_Theme FAILED";
-        echo "BE_Update_Theme FAILED";
-        echo "BE_Add_FoodMenu FAILED";
-        echo "BE_Update_FoodMenu FAILED";
+        echo "test_case1 FAILED";
+        echo "test_case2 FAILED";
+        echo "test_case3 FAILED";
+        echo "test_case4 FAILED";
+        echo "test_case5 FAILED";
+        echo "test_case6 FAILED";
+        echo "test_case7 FAILED";
+        echo "test_case8 FAILED";
     fi
 else
-	echo "BE_Add_User FAILED";
-    echo "BE_Add_Theme FAILED";
-    echo "BE_Get_Theme FAILED";
-    echo "BE_Update_Theme FAILED";
-    echo "BE_Add_FoodMenu FAILED";
-    echo "BE_Update_FoodMenu FAILED";
+        echo "test_case1 FAILED";
+        echo "test_case2 FAILED";
+        echo "test_case3 FAILED";
+        echo "test_case4 FAILED";
+        echo "test_case5 FAILED";
+        echo "test_case6 FAILED";
+        echo "test_case7 FAILED";
+        echo "test_case8 FAILED";
 fi

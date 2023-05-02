@@ -1,0 +1,46 @@
+div{
+    /* position: absolute; */
+    text-align: center;
+    /* top: 200px; */
+    padding: 10px 0 0 0;
+}
+.component mat-card{
+    padding: 0px;
+}
+.component{
+   background-image: url(https://tse3.mm.bing.net/th/id/OIP.jVH6eVT3bVUjHJ-oLaYfeQHaDt?pid=ImgDet&rs=1);
+   margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+#error{
+  font-size: 20px;
+  color: red;
+  }
+footer {
+
+    position: fixed;
+  
+    bottom: 0;
+  
+    left: 0;
+  
+    width: 100%;
+  
+    text-align: center;
+  
+    padding: 20px;
+  
+    background-color: black;
+  
+    border-top: 1px solid #ddd;
+    color: #ddd;
+  
+  }
+  
+  
+  footer p {
+  
+    margin: 0;
+  
+  }
+
+  

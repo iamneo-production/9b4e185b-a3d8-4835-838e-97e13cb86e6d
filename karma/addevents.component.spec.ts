@@ -2,16 +2,16 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 // import { RouterTestingModule } from '@angular/router/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { AddEventsComponent } from './addevents.component';
+import { AddeventsComponent } from './addevents.component';
 
-describe('AddEventsComponent', () => {
-  let component: AddEventsComponent;
+describe('AddeventsComponent', () => {
+  let component: AddeventsComponent;
   beforeEach(() => TestBed.configureTestingModule({
     imports: [HttpClientTestingModule], 
-    providers: [AddEventsComponent]
+    providers: [AddeventsComponent]
   }));
   beforeEach(() => {
-    const fixture = TestBed.createComponent(AddEventsComponent);
+    const fixture = TestBed.createComponent(AddeventsComponent);
     component = fixture.componentInstance;
   });
   it('FE_addEventsTest', () => {
