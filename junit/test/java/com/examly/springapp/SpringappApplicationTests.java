@@ -1,11 +1,10 @@
 package com.examly.springapp;
 
-
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 //import org.junit.Test;
-import org.junit.jupiter.api.Test; 
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -23,79 +22,100 @@ import org.springframework.transaction.annotation.Transactional;
 class SpringappApplicationTests {
 
 	@Autowired
-    private MockMvc mockMvc;
-	
-	@Test
-	@Transactional
-    public void BE_Add_User() throws Exception {
-        String newUser = "{\"email\":\"test@gmail.com\",\"password\":\"Test@123\",\"username\":\"test123\",\"mobileNumber\":\"9876543210\",\"userRole\":\"user\"}";
-        mockMvc.perform(MockMvcRequestBuilders.post("/user/signup")
-		.contentType(MediaType.APPLICATION_JSON)
-		.content(newUser)
-		.accept(MediaType.APPLICATION_JSON))
-		.andExpect(status().isOk())
-		.andReturn();
-    }
+	private MockMvc mockMvc;
 
+	// add user
 	@Test
 	@Transactional
-    public void BE_Add_Theme() throws Exception {
-        String newTheme = "{\"themeId\":\"01\",\"themeName\":\"ABC\",\"themeImageURL\":\"ABC.png\",\"themeDescription\":\"attractive\",\"themePhotographer\":\"XYZ\",\"themeVideographer\":\"PQR\",\"ThemeReturnGift\":\"yes\",\"ThemeCost\":\"100000\"}";
-        mockMvc.perform(MockMvcRequestBuilders.post("/admin/addTheme")
-		.contentType(MediaType.APPLICATION_JSON)
-		.content(newTheme)
-		.accept(MediaType.APPLICATION_JSON))
-		.andExpect(status().isOk())
-		.andReturn();
-    }
-	
-	@Test
-	@Transactional
-    public void BE_Get_Theme() throws Exception {
-	 	mockMvc.perform(MockMvcRequestBuilders.get("/admin/getTheme")
-		.contentType(MediaType.APPLICATION_JSON)
-		.accept(MediaType.APPLICATION_JSON))
-		.andExpect(status().isOk())
-		.andExpect(MockMvcResultMatchers.jsonPath("$").isNotEmpty())
-		.andReturn();
-    }
+	public void test_case1() throws Exception {
+		String newUser = "{\"userId\":\"01\",\"email\":\"test@gmail.com\",\"password\":\"Test@123\",\"username\":\"test123\",\"mobileNumber\":\"9876543210\",\"userRole\":\"user\"}";
+		mockMvc.perform(MockMvcRequestBuilders.post("/user")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(newUser)
+				.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
+	}
 
+	// add admin
 	@Test
 	@Transactional
-    public void BE_Update_Theme() throws Exception {
-        String newTheme = "{\"themeId\":\"01\",\"themeName\":\"ABC\",\"themeImageURL\":\"ABC.png\",\"themeDescription\":\"attractive\",\"themePhotographer\":\"XYZ\",\"themeVideographer\":\"PQR\",\"ThemeReturnGift\":\"yes\",\"ThemeCost\":\"100000\"}";
-        mockMvc.perform(MockMvcRequestBuilders.put("/admin/editTheme")
-		.param("themeId","01")
-		.contentType(MediaType.APPLICATION_JSON)
-		.content(newTheme)
-		.accept(MediaType.APPLICATION_JSON))
-		.andExpect(status().isOk())
-		.andReturn();
-    }
+	public void test_case2() throws Exception {
+		String newUser = "{\"userId\":\"02\",\"email\":\"testad@gmail.com\",\"password\":\"Testad@123\",\"username\":\"testad123\",\"mobileNumber\":\"9876543210\",\"userRole\":\"admin\"}";
+		mockMvc.perform(MockMvcRequestBuilders.post("/admin")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(newUser)
+				.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
+	}
 
+	// add referee
 	@Test
 	@Transactional
-    public void BE_Add_FoodMenu() throws Exception {
-        String newFoodMenu = "{\"foodMenuID\":\"01\",\"foodMenuType\":\"ABC\",\"foodMenuItems\":\"abcd\",\"foodMenuCost\":\"25000\"}";
-        mockMvc.perform(MockMvcRequestBuilders.post("/admin/addMenu")
-		.contentType(MediaType.APPLICATION_JSON)
-		.content(newFoodMenu)
-		.accept(MediaType.APPLICATION_JSON))
-		.andExpect(status().isOk())
-		.andReturn();
-    }
+	public void test_case3() throws Exception {
+		String newUser = "{\"refereeId\":\"01\",\"refereeName\":\"testref\",\"noOfMatches\":\"20\"}";
+		mockMvc.perform(MockMvcRequestBuilders.post("/addReferee")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(newUser)
+				.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
+	}
 
+	// get user
 	@Test
 	@Transactional
-    public void BE_Update_FoodMenu() throws Exception {
-        String newFoodMenu = "{\"foodMenuID\":\"01\",\"foodMenuType\":\"ABC\",\"foodMenuItems\":\"abcd\",\"foodMenuCost\":\"25000\"}";
-        mockMvc.perform(MockMvcRequestBuilders.put("/admin/editMenu")
-		.param("foodMenuID","01")
-		.contentType(MediaType.APPLICATION_JSON)
-		.content(newFoodMenu)
-		.accept(MediaType.APPLICATION_JSON))
-		.andExpect(status().isOk())
-		.andReturn();
-    }
-	
+	public void test_case4() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get("/user")
+				.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$").isNotEmpty())
+				.andReturn();
+	}
+
+	// get referee
+	@Test
+	@Transactional
+	public void test_case5() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get("/getReferee")
+				.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$").isNotEmpty())
+				.andReturn();
+	}
+
+	// update user by id
+	@Test
+	@Transactional
+	public void test_case6() throws Exception {
+		String newUser = "{\"userId\":\"01\",\"email\":\"testuser2@gmail.com\",\"password\":\"test@123\",\"username\":\"testuser2\",\"mobileNumber\":\"9876543210\",\"userRole\":\"user\"}";
+		mockMvc.perform(MockMvcRequestBuilders.put("user/editUser/01")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(newUser)
+				.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
+	}
+
+	// delete user by id
+	@Test
+	@Transactional
+	public void test_case7() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.delete("/01")
+				.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
+	}
+
+	// delete referee by id
+	@Test
+	@Transactional
+	public void test_case8() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.delete("/deleteReferee/01")
+				.accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
+	}
+
 }
