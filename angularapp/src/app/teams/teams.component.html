@@ -1,0 +1,78 @@
+<div class="body">
+    <div>
+        <ul>
+        
+        <li> <a routerLink="/adminhome">Cricket event</a></li>
+        <li> <a routerLink="/venues">Venues</a></li>
+        <li>  <a routerLink="/teams">Teams</a></li>
+        <li> <a routerLink="/referee">Referee</a></li>
+        <li style="float: right;"> <a routerLink="/login">Logout</a></li>
+    </ul>
+    </div>
+    
+    
+    <div class="form">
+        <div class="addTeam">
+            <div class="text-center">
+                <h2>
+                    <p> Enter the Team details</p>
+                </h2>
+                <br>
+                <form #AdminForm="ngForm" (ngSubmit)="addTeam(AdminForm.value)">
+    
+                    <input type="text" ngModel name="teamName" placeholder="Enter the team name" required>
+                    <br>
+                    <br>
+                    <input type="text" ngModel name="nofplayers" placeholder="Enter No of Players" required>
+                    <br>
+                    <br>
+                    <input type="text" ngModel name="teamcaptain" placeholder="Enter Team Captain" required>
+                    <br>
+                    <br>
+                    <input type="text" ngModel name="teamvicecaptain" placeholder="Enter Team Vice-Captain" required>
+                    <br>
+                    <br>
+                    <input type="text" ngModel name="teamlocation" placeholder="Enter Team Location" required><br>
+                    <br>
+                    <button type="submit" class="btn btn-primary btn-rounded"> Add Team</button>
+                </form>
+            </div>
+        </div><br>
+        <div class="display">
+            <div class="tab">
+                <h2>Team Details</h2>
+                <table border="2" class="center table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Team ID</th>
+                            <th scope="col">Team NAME</th>
+                            <th scope="col">No.Of.players</th>
+                            <th scope="col">Team Captain</th>
+                            <th scope="col">Team Vice-Captain</th>
+                            <th scope="col">Team Location</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let t of Team">
+                            <td>{{t.teamId}}</td>
+                            <td>{{t.teamName}}</td>
+                            <td>{{t.nofplayers}}</td>
+                            <td>{{t.teamcaptain}}</td>
+                            <td>{{t.teamvicecaptain}}</td>
+                            <td>{{t.teamlocation}}</td>
+    
+                            <td><button (click)="deleteTeam(t.teamId)" class="fa fa-trash"
+                                    style="font-size:10px;color:red;">delete</button>
+    
+                            </td>
+                        </tr>
+                        <router-outlet></router-outlet>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer><h4>Cricket Management System</h4><p>A Team Dark Matrix Solutions</p></footer>
+    </div>
+    

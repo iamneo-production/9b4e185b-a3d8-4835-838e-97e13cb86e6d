@@ -1,1 +1,75 @@
-<p>login works!</p>
+<div fxLayoutAlign="center center" fxFlexFill class="component">
+    <mat-card fxFlex="25">
+        <mat-toolbar color="primary">Login Page</mat-toolbar>
+    <!-- <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <div class="form-group">
+            <mat-label>User Role</mat-label>
+            <mat-select name="userRole" required>
+            <mat-option value="Organizer">Organizer</mat-option>
+            <mat-option value="Admin">Admin</mat-option>
+            </mat-select>
+            </div>
+            </mat-form-field>
+    <mat-form-field>
+    <div class="form-group">
+    <label for="email">Email address</label>
+    <input matInput type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
+    </div>
+    </mat-form-field>
+
+    <mat-form-field>
+    <div class="form-group">
+    <label for="password">Password</label>
+    <input matInput type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required id="password">
+    </div>
+    </mat-form-field>
+    <button mat-raised-button type="submit" class="btn btn-primary" id="loginButton">Login</button>
+    <br>
+    <br>
+    <p>New User/admin <a routerLink="/register">Sign up</a></p> -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  
+        <mat-form-field>
+        
+        <input matInput placeholder="Email" formControlName="email" required>
+        <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+        Email is required
+        </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+        <input matInput type="password" placeholder="Password" formControlName="password" required>
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+        Password is required
+        </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>User Role</mat-label>
+            <mat-select formControlName="userRole" required>
+            <mat-option value="Organizer">Organizer</mat-option>
+            <mat-option value="Admin">Admin</mat-option>
+            </mat-select>
+            <mat-error *ngIf="loginForm.get('userRole')?.hasError('required')">
+            User Role is required
+            </mat-error>
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button><br>
+            <p id="error">{{errormessage}}</p>
+            <br>
+            <br>
+             <p>New to our system? <a routerLink="/register">Register</a></p>
+    </form>
+    </mat-card>
+    </div>
+    <footer><h4>Cricket Management System</h4><p>A Team Dark Matrix Solutions</p>
+    <ul>Team Members:
+        <li>Rupam Banerjee</li>
+        <li>TamilSelvan Selvakumar</li>
+        <li>Angel Lackonia</li>
+        <li>Latha</li>
+        <li>Nithyashree V</li>
+    </ul></footer>
+

@@ -1,0 +1,75 @@
+<div class="body">
+    <div>
+      <ul>
+       <li> <a routerLink="/adminhome">Cricket event</a></li>
+        <li> <a routerLink="/venues">Venues</a></li>
+        <li> <a routerLink="/teams">Teams</a></li>
+        <li> <a routerLink="/referee">Referee</a></li>
+        <li style="float: right;"><a routerLink="/login">Logout</a></li>
+      </ul>
+        
+    </div>
+    <router-outlet></router-outlet>
+    
+    <div class="dis">
+    
+    <div class="abc">
+        <form #userForm="ngForm" (ngSubmit)="addref(userForm.value)">
+          <br>
+          <br>
+         <h1>Add Referee Details</h1>
+    
+         <input type="text" formControllName name="refereeId" placeholder="Enter id"required>
+        <br> 
+        <br>
+     <input type="text" ngModel name="refereeName" placeholder="Enter refereeName"required>
+        <br>
+        <br>
+        <input type="text" ngModel name="noOfMatches" placeholder="Enter noOfMatches "required>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary btn-rounded">Add Referee</button><br>
+        
+        
+    
+        </form>
+    </div>
+    <br><br>
+    
+    <div class="tbl">
+    
+        <table border="2" class="table table-striped">
+          <thead>
+            <tr>
+                <th scope="col">RefreeId</th><br>
+            <th scope="col">RefreeName</th><br>
+            <th scope="col">No.Of.Matches</th>
+            <th scope="col">Action</th>
+            
+            </tr>
+          </thead>
+    
+            <tbody>
+            <tr *ngFor="let e of ref">
+                <td>{{e.refereeID}}</td><br>
+                <td>{{e.refereeName}}</td><br>
+                <td>{{e.noOfMatches}}</td>
+    
+                        <!-- deleteReferee  -->
+     <td><button (click)="deleteReferee(e.refereeID)" class="fa fa-trash" style="font-size:10px;color: red ;">Delete</button>
+      
+      
+    </td>
+    </tr>
+               <router-outlet></router-outlet>
+    
+              
+            </tbody>
+        </table>
+    </div> 
+    </div>
+    
+    <footer><h4>Cricket Management System</h4><p>A Team Dark Matrix Solutions</p></footer>
+    </div>
+    
+    

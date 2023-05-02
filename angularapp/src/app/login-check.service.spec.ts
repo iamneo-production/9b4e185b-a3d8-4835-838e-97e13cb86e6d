@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LogincheckService } from './logincheck.service';
+import { LoginCheckService } from './login-check.service';
 
-describe('LogincheckService', () => {
-  let service: LogincheckService;
+describe('LoginCheckService', () => {
+  let service: LoginCheckService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LogincheckService);
+    service = TestBed.inject(LoginCheckService);
   });
 
   it('should be created', () => {

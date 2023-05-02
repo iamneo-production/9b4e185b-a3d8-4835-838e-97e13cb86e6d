@@ -1,0 +1,112 @@
+/* .component mat-card{
+    padding: 0px;
+}
+.login-form{
+    padding: 20px;
+} */
+
+div{
+    /* position: absolute; */
+    text-align: center;
+    /* top: 200px; */
+    padding: 10px 0 0 0;
+}
+.component mat-card{
+    padding: 0px;
+}
+#input{
+  padding-top: 4px;
+}
+.component{
+   background-image: url(https://tse4.mm.bing.net/th/id/OIP.3nmh6uVENNhvIZcUovDU7gHaEK?pid=ImgDet&rs=1);
+   margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#error{
+font-size: 30px;
+color: red;
+}
+
+/* footer {
+
+  text-align: center;
+
+  padding: 20px;
+
+  background-color: #f2f2f2;
+
+  border-top: 1px solid #ddd;
+
+}
+
+
+footer p {
+
+  margin: 0;
+
+} */
+
+/* footer {
+
+  position: fixed;
+
+  bottom: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  text-align: center;
+
+  padding: 20px;
+
+  background-color: black;
+
+  border-top: 1px solid #ddd;
+  color: #ddd;
+
+}
+
+
+footer p {
+
+  margin: 0;
+
+} */
+
+footer {
+    position: fixed;
+
+    bottom: 0;
+  
+    left: 0;
+  
+    width: 100%;
+    position: relative;
+    /* text-align: center; */
+    padding: 20px;
+    background-color: black;
+    border-top: 1px solid #ddd;
+    color: white;
+    }
+    
+    footer ul {
+    list-style: none;
+    /* padding-left: 0; */
+    margin-right: 0;
+    display: flex;
+    /* justify-content: right; */
+    /* padding-left: 80vw; */
+    justify-content: center;
+    /* border: red solid 2px; */
+    }
+    
+    footer ul li {
+    margin: 0 20px;
+    }
+    
+    footer p {
+    margin: 10px 0 0;
+    }
